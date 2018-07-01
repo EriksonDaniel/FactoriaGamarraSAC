@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>FG</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link href="../static/css/index.css" th:href="@{/css/index.css}"
+	rel="stylesheet" />
+
+<!-- Material Design for Bootstrap fonts and icons -->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+<!-- Material Design for Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+	integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX"
+	crossorigin="anonymous">
+
+<!-- JQuery -->
+
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/1.10.18/css/dataTables.material.min.css">
+
+</head>
+<body>
+
+	<div th:replace="fragments/head :: head"></div>
+	<div class="container">
+		<!-- EMPIEZA A EDITAR DE AQUÍ EN ADELANTE -->
+		<!-- EMPIEZA A EDITAR DE AQUÍ EN ADELANTE -->
+
+		<br>
+		<h2>INICIAR SESION</h2>
+		<br>
+		<form th:action="@{/login}" method="post">
+			<div class="form-group">
+				<label for="username">Username</label><input type="text"
+					id="username" name="username" class="form-control"
+					autofocus="autofocus" placeholder="Username">
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label><input type="password"
+					id="password" name="password" class="form-control"
+					placeholder="Password">
+			</div>
+			<div class="form-group">
+				<div>
+					<input type="submit" name="login-submit" id="login-submit"
+						class="btn btn-success" value="INGRESAR">
+				</div>
+			</div>
+		</form>
+	</div>
+	<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>

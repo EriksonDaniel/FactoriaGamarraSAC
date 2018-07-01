@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>FG</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link href="../static/css/index.css" th:href="@{/css/index.css}"
+	rel="stylesheet" />
+
+<!-- Material Design for Bootstrap fonts and icons -->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+<!-- Material Design for Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+	integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX"
+	crossorigin="anonymous">
+
+<!-- JQuery -->
+
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/1.10.18/css/dataTables.material.min.css">
+
+<title>Factoria Gamarra</title>
+
+
+
+
+</head>
+<body>
+
+	<div class="bmd-layout-container bmd-drawer-f-l">
+		<header class="bmd-layout-header ">
+			<div th:replace="fragments/head :: head"></div>
+		</header>
+		<div id="dw-s1" class="bmd-layout-drawer bg-faded ">
+			<div th:replace="fragments/header :: header"></div>
+		</div>
+
+		<main class="bmd-layout-content">
+		<div class="container">
+			<!-- EMPIEZA A EDITAR DE AQUÍ EN ADELANTE -->
+			<!-- EMPIEZA A EDITAR DE AQUÍ EN ADELANTE -->
+
+			<br>
+			<h2>REGISTRAR GUIA DE REMISION</h2>
+			<br>
+			<form th:action="@{/guiaRemision/save}" th:object="${guiaRemision}" method="post">
+				<div class="form-group">
+					<label for="name">Observacion guia de remision</label> <input
+						type="text" th:field="*{observacionGuiaRemision}"
+						class="form-control" id="name" pattern=".{10,60}"
+						placeholder="Observacion guia de remision"></input>
+				</div>
+				<div class="form-group">
+					<label for="fecha">Fecha de entrega</label> <input type="date"
+						th:field="*{fechaEntrega}" class="form-control" id="fecha"></input>
+				</div>
+				<div class="form-group">
+					<label for="fecha">Fecha de devolucion</label> <input type="date"
+						th:field="*{fechaDevolucion}" class="form-control" id="fecha"></input>
+				</div>
+				<div class="form-group">
+					<label for="version">Servicio</label> <select class="custom-select"
+						th:field="*{servicio.idServicio}">
+						<option th:each="s: ${servicios}" th:value="${s.idServicio}"
+							th:text="${s.nombreServicio}"
+							th:selected="(${s.idServicio} == *{servicio.idServicio})"></option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="version">Vehiculo</label> <select class="custom-select"
+						th:field="*{vehiculo.idVehiculo}">
+						<option th:each="v: ${vehiculos}" th:value="${v.idVehiculo}"
+							th:text="${v.placaVehiculo}"
+							th:selected="(${v.idVehiculo} == *{vehiculo.idVehiculo})"></option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="version">Cliente</label> <select class="custom-select"
+						th:field="*{cliente.idCliente}">
+						<option th:each="c: ${clientes}" th:value="${c.idCliente}"
+							th:text="${c.nombreCliente}"
+							th:selected="(${c.idCliente} == *{cliente.idCliente})"></option>
+					</select>
+				</div>
+				<div>
+					<div>
+						<input class="btn btn-outline-success" type="submit"
+							value="Guardar"></input>
+
+
+					</div>
+				</div>
+			</form>
+
+			<!-- SOLO EDITAR HASTA AQUÍ -->
+			<!-- SOLO EDITAR HASTA AQUÍ -->
+		</div>
+		</main>
+	</div>
+	<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>FG</title>
+<!-- Requ ired meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link href="../static/css/index.css" th:href="@{/css/index.css}"
+	rel="stylesheet" />
+
+<!-- Material Design for Bootstrap fonts and icons -->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+<!-- Material Design for Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+	integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX"
+	crossorigin="anonymous">
+
+<!-- JQuery -->
+
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/1.10.18/css/dataTables.material.min.css">
+
+<title>Factoria Gamarra</title>
+
+
+
+
+</head>
+<body>
+
+	<div class="bmd-layout-container bmd-drawer-f-l">
+		<header class="bmd-layout-header ">
+			<div th:replace="fragments/head :: head"></div>
+		</header>
+		<div id="dw-s1" class="bmd-layout-drawer bg-faded ">
+			<div th:replace="fragments/header :: header"></div>
+		</div>
+
+		<main class="bmd-layout-content">
+		<div class="container">
+			<!-- EMPIEZA A EDITAR DE AQUÍ EN ADELANTE -->
+			<!-- EMPIEZA A EDITAR DE AQUÍ EN ADELANTE -->
+
+			<br>
+			<h2>REGISTRAR CLIENTES</h2>
+			<br>
+			<form th:action="@{/cliente/save}" th:object="${cliente}"
+				method="post">
+				<div class="form-group">
+					<label for="name">Nombre cliente</label> <input type="text"
+						th:field="*{nombreCliente}" class="form-control" id="name" pattern=".{3,15}"
+						placeholder="Nombre cliente">
+				</div>
+				<div class="form-group">
+					<label for="version">Apellido cliente</label> <input type="text" pattern=".{3,12}"
+						th:field="*{apellidoCliente}" class="form-control" id="version"
+						placeholder="Apellido cliente">
+				</div>
+				<div class="form-group">
+					<label for="version">DNI cliente</label> <input type="text" pattern=".{8,8}"
+						th:field="*{dniCliente}" class="form-control" id="version"
+						placeholder="DNI cliente">
+				</div>
+				<div class="form-group">
+					<label for="name">Razon social cliente</label> <input type="text" pattern=".{5,25}"
+						th:field="*{razonSocialCliente}" class="form-control" id="name"
+						placeholder="Razon Social cliente">
+				</div>
+				<div class="form-group">
+					<label for="version">Direccion cliente</label> <input type="text" pattern=".{5,70}"
+						th:field="*{direccionCliente}" class="form-control" id="version"
+						placeholder="Direccion cliente" required>
+				</div>
+				<div class="form-group">
+					<label for="name">RUC cliente</label> <input type="text" pattern=".{12,12}"
+						th:field="*{rucCliente}" class="form-control" id="name"
+						placeholder="RUC cliente">
+				</div>
+				<div class="form-group">
+					<label for="version">Telefono cliente</label> <input type="text" pattern=".{7,9}"
+						th:field="*{telefonoCliente}" class="form-control" id="version"
+						placeholder="Telefono cliente" required>
+				</div>
+				<div>
+					<div>
+						<input class="btn btn-outline-success" type="submit"
+							value="Guardar">
+					</div>
+				</div>
+			</form>
+
+			<!-- SOLO EDITAR HASTA AQUÍ -->
+			<!-- SOLO EDITAR HASTA AQUÍ -->
+		</div>
+		</main>
+	</div>
+	<div th:replace="fragments/footer :: footer"></div>
+
+
+</body>
+</html>

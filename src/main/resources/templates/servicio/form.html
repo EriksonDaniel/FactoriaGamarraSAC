@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>FG</title>
+<!-- Requ ired meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link href="../static/css/index.css" th:href="@{/css/index.css}"
+	rel="stylesheet" />
+
+<!-- Material Design for Bootstrap fonts and icons -->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+<!-- Material Design for Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+	integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX"
+	crossorigin="anonymous">
+
+<!-- JQuery -->
+
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/1.10.18/css/dataTables.material.min.css">
+
+<title>Factoria Gamarra</title>
+
+
+
+
+</head>
+<body>
+
+	<div class="bmd-layout-container bmd-drawer-f-l">
+		<header class="bmd-layout-header ">
+			<div th:replace="fragments/head :: head"></div>
+		</header>
+		<div id="dw-s1" class="bmd-layout-drawer bg-faded ">
+			<div th:replace="fragments/header :: header"></div>
+		</div>
+
+		<main class="bmd-layout-content">
+		<div class="container">
+			<!-- EMPIEZA A EDITAR DE AQUÍ EN ADELANTE -->
+			<!-- EMPIEZA A EDITAR DE AQUÍ EN ADELANTE -->
+
+			<br>
+			<h2>REGISTRAR SERVICIO</h2>
+			<br>
+			<form th:action="@{/servicio/save}" th:object="${servicio}" method="post">
+				<div class="form-group">
+					<label for="name">Nombre Servicio</label> <input type="text"
+						th:field="*{nombreServicio}" class="form-control" id="name" pattern=".{5,30}"
+						placeholder="Nombre servicio" required>
+				</div>
+				<div class="form-group">
+					<label for="version">Detalle Servicio</label> <input type="text" pattern=".{5,70}"
+						th:field="*{detalleServicio}" class="form-control" id="version"
+						placeholder="Detalle Servicio" required>
+				</div>
+				<div>
+					<div>
+						<input class="btn btn-outline-success" type="submit" value="Guardar">
+					</div>
+				</div>
+			</form>
+
+			<!-- SOLO EDITAR HASTA AQUÍ -->
+			<!-- SOLO EDITAR HASTA AQUÍ -->
+		</div>
+		</main>
+	</div>
+	<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>

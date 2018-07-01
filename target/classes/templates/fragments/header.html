@@ -1,0 +1,101 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Lista Clientes</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../static/css/index.css" th:href="@{/css/index.css}"
+	rel="stylesheet" />
+
+<!-- Material Design for Bootstrap fonts and icons -->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+<!-- Material Design for Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+	integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX"
+	crossorigin="anonymous">
+
+<!-- JQuery -->
+
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/1.10.18/css/dataTables.material.min.css">
+
+<title>Factoria Gamarra</title>
+</head>
+
+<body>
+	<div th:fragment="header">
+		<header>
+			<a class="navbar-brand" href="@{/marca/listar}"> </a>
+
+		</header>
+		<ul class="list-group list-defa">
+
+
+			<a class="list-group-item" th:href="@{/guiaRemision/list}"> <i
+				class="material-icons" style="font-size: 36px;">home</i>
+				<div class="bmd-list-group-col">
+					<h5 class="list-group-item-heading">INICIO</h5>
+				</div>
+			</a>
+
+			<a class="list-group-item" th:href="@{/guiaRemision/list}"> <i
+				class="material-icons" style="font-size: 36px;">inbox</i>
+				<div class="bmd-list-group-col">
+					<h5 class="list-group-item-heading">GUIA REM</h5>
+					<p class="list-group-item-text">Guia de remision</p>
+				</div>
+			</a>
+
+			<a class="list-group-item" th:href="@{/vehiculo/list}"> <i
+				class="material-icons" style="font-size: 36px;">directions_car</i>
+				<div class="bmd-list-group-col">
+					<h5 class="list-group-item-heading">VEHICULO</h5>
+					<p class="list-group-item-text">Administrar vehiculo</p>
+				</div>
+			</a>
+			<a class="list-group-item" th:href="@{/marca/list}"> <i
+				class="material-icons" style="font-size: 36px;">local_car_wash</i>
+				<div class="bmd-list-group-col">
+					<h5 class="list-group-item-heading">MARCA</h5>
+					<p class="list-group-item-text">Administrar marcas</p>
+				</div>
+			</a>
+
+			<a class="list-group-item" th:href="@{/modelo/list}"> <i
+				class="material-icons" style="font-size: 36px;">local_taxi</i>
+				<div class="bmd-list-group-col">
+					<h5 class="list-group-item-heading">MODELO</h5>
+					<p class="list-group-item-text">Administrar modelos</p>
+				</div>
+			</a>
+			<a class="list-group-item" th:href="@{/color/list}"> <i
+				class="material-icons" style="font-size: 36px;">format_color_fill</i>
+				<div class="bmd-list-group-col">
+					<h5 class="list-group-item-heading">COLOR</h5>
+					<p class="list-group-item-text">Color de vehiculo</p>
+				</div>
+			</a>
+			<a class="list-group-item" th:href="@{/cliente/list}"> <i
+				class="material-icons" style="font-size: 36px;">accessibility</i>
+				<div class="bmd-list-group-col">
+					<h5 class="list-group-item-heading">CLIENTES</h5>
+					<p class="list-group-item-text">Clientes</p>
+				</div>
+			</a>
+			<a class="list-group-item" th:href="@{/servicio/list}"> <i
+				class="material-icons" style="font-size: 36px;">commute</i>
+				<div class="bmd-list-group-col">
+					<h5 class="list-group-item-heading">SERVICIOS</h5>
+					<p class="list-group-item-text">Servicios</p>
+				</div>
+			</a>
+
+		</ul>
+	</div>
+</body>
+</html>

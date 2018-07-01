@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>FG</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../static/css/index.css" th:href="@{/css/index.css}"
+	rel="stylesheet" />
+
+<!-- Material Design for Bootstrap fonts and icons -->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+<!-- Material Design for Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+	integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX"
+	crossorigin="anonymous">
+
+<!-- JQuery -->
+
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/1.10.18/css/dataTables.material.min.css">
+
+<title>Factoria Gamarra</title>
+
+
+
+
+</head>
+<body>
+
+	<div class="bmd-layout-container bmd-drawer-f-l">
+		<header class="bmd-layout-header ">
+			<div th:replace="fragments/head :: head"></div>
+		</header>
+		<div id="dw-s1" class="bmd-layout-drawer bg-faded ">
+			<div th:replace="fragments/header :: header"></div>
+		</div>
+
+		<main class="bmd-layout-content">
+		<div class="container">
+			<!-- EMPIEZA A EDITAR DE AQUÍ EN ADELANTE -->
+			<!-- EMPIEZA A EDITAR DE AQUÍ EN ADELANTE -->
+
+			<br>
+			<h2>LISTA DE GUIAS DE REMISIONES</h2>
+			<ul class="nav nav-pills nav-fill">
+				<a class="btn btn-outline-success" th:href="@{/guiaRemision/new}"
+					role="button">Registrar</a>
+			</ul>
+			<br>
+			<table class="table table-hover" id="tab_logic">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Observacion Guia</th>
+						<th>Servicio</th>
+						<th>Placa Vehiculo</th>
+						<th>Nombre Cliente</th>
+						<th>Fecha entrega</th>
+						<th>Fecha devolucion</th>
+						<th>Eliminar</th>
+						<th>Modificar</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="guiaRemision: ${guiaRemisiones}">
+						<td th:text="${guiaRemision.idGuiaRemision}"></td>
+						<td th:text="${guiaRemision.observacionGuiaRemision}"></td>
+						<td th:text="${guiaRemision.servicio.nombreServicio}"></td>
+						<td th:text="${guiaRemision.vehiculo.placaVehiculo}"></td>
+						<td th:text="${guiaRemision.cliente.nombreCliente}"></td>
+						<td th:text="${guiaRemision.fechaEntrega}"></td>
+						<td th:text="${guiaRemision.fechaDevolucion}"></td>
+						<td><a class="badge badge-secondary" style="font-size: 103%;"
+							th:href="@{/guiaRemision/delete?id=}+${guiaRemision.idGuiaRemision}">Eliminar</a></td>
+						<td><a class="badge badge-secondary" style="font-size: 103%;"
+							th:href="@{/guiaRemision/update?id=}+${guiaRemision.idGuiaRemision}">Modificar</a></td>
+					</tr>
+				</tbody>
+
+			</table>
+			<!-- SOLO EDITAR HASTA AQUÍ -->
+			<!-- SOLO EDITAR HASTA AQUÍ -->
+		</div>
+		</main>
+	</div>
+	<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>
